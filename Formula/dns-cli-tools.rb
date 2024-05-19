@@ -1,20 +1,23 @@
 class DnsCliTools < Formula
   desc "A CLI tool to manage dns entries"
   homepage "https://github.com/Hugo-Persson/dns-cli-tools"
-  version "1.0.5"
+  version "1.0.7"
+  base_url "https://github.com/Hugo-Persson/dns-cli-tools/releases/download/#{version}"
+  mac_sha "1b8c4d8854b4bf586793e2cf615d2705bf31ce624ae0d0dbb42f27be569f605b"
+  linux_sha "0932c974baf3bb89da383ca65c139ab66736325e3430bcf7d81fb838e68ebb6b"
   on_macos do
-    url "https://github.com/Hugo-Persson/dns-cli-tools/releases/download/#{version}/dns-cli-macos-arm64.tar.gz"
-    sha256 "8a071d3833347fecda9a9afc06bd880d8bfef28b3f960a5027538ecf128b3d7a"
+    url "#{base_url}/dns-cli-macos-arm64.tar.gz"
+    sha256 mac_sha
   end
 
   # Define the URL and SHA256 for Linux
   on_linux do
-    url "https://github.com/Hugo-Persson/dns-cli-tools/releases/download/#{version}/dns-cli-linux-amd64.tar.gz"
-    sha256 "349281dd23ad3a086be98064c9b42c78aea2285fcc1446513ed6b97863423698"
+    url "#{base_url}/dns-cli-linux-amd64.tar.gz"
+    sha256 linux_sha
   end
 
   def install
-    bin.install "dns-cli"
+    bin.install "build/dns-cli"
   end
 
   test do

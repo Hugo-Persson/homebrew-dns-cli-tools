@@ -17,7 +17,7 @@ class DnsCliTools < Formula
   end
 
   def install
-    bin.install "build/dns-cli"
+    bin.install "dns-cli"
   end
 
   test do

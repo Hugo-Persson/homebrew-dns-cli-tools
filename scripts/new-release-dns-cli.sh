@@ -19,7 +19,8 @@ cd ..
 cd Formula
 
 ls -la
-sed -i '' "s/version \"[0-9]\.[0-9]\.[0-9]\"/version \"$VERSION\"/" ./dns-cli-tools.rb
+#sed -i '' "s/version \"[0-9]\.[0-9]\.[0-9]\"/version \"$VERSION\"/" ./dns-cli-tools.rb
+sed "s/version \"[0-9]\.[0-9]\.[0-9]\"/version \"$VERSION\"/" ./dns-cli-tools.rb
 
 BASE_URL="https://github.com/Hugo-Persson/dns-cli-tools/releases/download/$VERSION"
 

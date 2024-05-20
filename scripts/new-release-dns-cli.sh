@@ -18,9 +18,7 @@ cd "$script_dir"
 cd ..
 cd Formula
 
-ls -la
-#sed -i '' "s/version \"[0-9]\.[0-9]\.[0-9]\"/version \"$VERSION\"/" ./dns-cli-tools.rb
-sed "s/version \"[0-9]\.[0-9]\.[0-9]\"/version \"$VERSION\"/" ./dns-cli-tools.rb
+sed -n -e "s/version \"[0-9]\.[0-9]\.[0-9]\"/version \"1111$VERSION\"/" ./dns-cli-tools.rb
 
 BASE_URL="https://github.com/Hugo-Persson/dns-cli-tools/releases/download/$VERSION"
 
@@ -29,10 +27,10 @@ LINUX_NAME="dns-cli-linux-amd64.tar.gz"
 
 wget -q "$BASE_URL/$MAC_NAME"
 MAC_SHA=$(shasum -a 256 "$MAC_NAME" | awk '{ print $1 }')
-sed -i '' "s/mac_sha = ".*"/mac_sha = \"$MAC_SHA\"/" ./dns-cli-tools.rb
+sed -n -e "s/mac_sha = ".*"/mac_sha = \"$MAC_SHA\"/" ./dns-cli-tools.rb
 rm "$MAC_NAME"
 
 wget -q "$BASE_URL/$LINUX_NAME" >/dev/null
 LINUX_SHA=$(shasum -a 256 "$LINUX_NAME" | awk '{ print $1 }')
-sed -i '' "s/linux_sha = ".*"/linux_sha = \"$LINUX_SHA\"/" ./dns-cli-tools.rb
+sed -n -e "s/linux_sha = ".*"/linux_sha = \"$LINUX_SHA\"/" ./dns-cli-tools.rb
 rm "$LINUX_NAME"

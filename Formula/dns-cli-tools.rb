@@ -3,8 +3,8 @@ class DnsCliTools < Formula
   homepage "https://github.com/Hugo-Persson/dns-cli-tools"
   version "1.0.15"
   @github_base_url = "https://github.com/Hugo-Persson/dns-cli-tools/releases/download/#{version}"
-  @mac_sha = "2787ba02687a19a63b246b43c34a822e5c182cd99393f50e39f5aa08b5874b4b"
-  @linux_sha = "8a32cda261d57aea0de3b4c1cac9ad9a90f20ba69a3005770ba1455161f64239"
+  @mac_sha = "927e772cb72cd378efd30542ea522262d1f0bca6df2a623a39ff5fdf40b3217e"
+  @linux_sha = "28586f1c71d7df28c54c6cf227e355d5d2b0a4fcc04c80abbaa27b9e891fd32b"
   on_macos do
     url "#{@github_base_url}dns-cli-macos-arm64.tar.gz"
     sha256 @mac_sha

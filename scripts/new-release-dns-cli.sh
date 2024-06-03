@@ -18,7 +18,7 @@ cd "$script_dir"
 cd ..
 cd Formula
 
-sed -i "s/version \"[0-9]\.[0-9]\.[0-9]\"/version \"$VERSION\"/" ./dns-cli-tools.rb
+sed -i "s/version \".*\"/version \"$VERSION\"/" ./dns-cli-tools.rb
 
 BASE_URL="https://github.com/Hugo-Persson/dns-cli-tools/releases/download/$VERSION"
 

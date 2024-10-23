@@ -1,10 +1,10 @@
 class DnsCliTools < Formula
   desc "A CLI tool to manage dns entries"
   homepage "https://github.com/Hugo-Persson/dns-cli-tools"
-  version "1.0.18"
+  version "1.0.19"
   @github_base_url = "https://github.com/Hugo-Persson/dns-cli-tools/releases/download/#{version}"
-  @mac_sha = "b3e2bca4b4f410b2333109994f50fcb56b9f936867ed2e4846848c14c104b1c3"
-  @linux_sha = "be50099b3ebb789c7c0d99641a4e9880fa4e99130042430db28953e31dd96409"
+  @mac_sha = "ca7d95a7964c29fb8d7e0a2d22758e6e41f310f3bbd2ec00597d34282f5b4081"
+  @linux_sha = "d457f00e9c1f222465da4297e1c13d63a0344176831c30a751d916e6bd2742c9"
   on_macos do
     url "#{@github_base_url}/dns-cli-macos-arm64.tar.gz"
     sha256 @mac_sha
